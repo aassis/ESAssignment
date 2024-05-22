@@ -6,7 +6,6 @@ protocol MediaViewModelProtocol {
     var media: [Media]? { get }
     var mediaPublisher: Published<[Media]?>.Publisher { get }
     var error: Error? { get }
-    var errorPublished: Published<Error?> { get }
     var errorPublisher: Published<Error?>.Publisher { get }
 
     func setApiKey(_ apiKey: String)
