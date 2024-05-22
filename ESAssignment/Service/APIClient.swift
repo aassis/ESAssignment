@@ -20,24 +20,16 @@ final class APIClient: APIClientProtocol {
     }
 
     func requestMedia(searchText: String, page: Int, apiKey: String) -> AnyPublisher<MediaResponse, Error> {
-        Future<MediaResponse, Error> { promise in
-            self.provider.requestPublisher(.searchMovies(searchText: searchText, page: page, apiKey: apiKey))
-                .sink { result in
-                    switch result {
-                    case .failure(let error):
-                        promise(.failure(error))
-                    default:
-                        break
-                    }
-                } receiveValue: { response in
-                    do {
-                        let result = try JSONDecoder().decode(MediaResponse.self, from: response.data)
-                        promise(.success(result))
-                    } catch let err {
-                        promise(.failure(err))
-                    }
-                }
-                .store(in: &self.cancellable)
-        }.eraseToAnyPublisher()
+        return provider.request(.searchMovies(searchText: searchText, page: page, apiKey: apiKey))
+    }
+}
+
+extension MoyaProvider {
+    func request<T:Decodable>(_ target:Target) -> AnyPublisher<T, Error> {
+        return self.requestPublisher(target)
+            .map(T.self)
+            .catch({ error in
+                Fail(error: error)
+            }).eraseToAnyPublisher()
     }
 }

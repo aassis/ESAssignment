@@ -11,7 +11,7 @@ final class MediaViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.cancellables = []
-        self.apiClient = APIClient(mock: true)
+        self.apiClient = APIClient(stub: true)
         self.viewModel = MediaViewModel(apiClient: apiClient!)
     }
 
