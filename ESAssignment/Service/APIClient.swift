@@ -11,8 +11,8 @@ final class APIClient: APIClientProtocol {
 
     private let provider: MoyaProvider<OMDbProvider>
 
-    init(mock: Bool = false) {
-        if mock {
+    init(stub: Bool = false) {
+        if stub {
             self.provider = MoyaProvider<OMDbProvider>.init(stubClosure: MoyaProvider<OMDbProvider>.immediatelyStub(_:))
         } else {
             self.provider = MoyaProvider<OMDbProvider>()
