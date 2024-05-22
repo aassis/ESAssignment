@@ -21,6 +21,11 @@
 		A8B090FC2BEE1FF70048A17C /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B090FB2BEE1FF70048A17C /* ErrorCell.swift */; };
 		A8B091062BEE6B680048A17C /* BuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B091052BEE6B680048A17C /* BuilderProtocol.swift */; };
 		A8B091082BEE6B8B0048A17C /* MediaViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B091072BEE6B8B0048A17C /* MediaViewControllerBuilder.swift */; };
+		A8C597BD2BFDCF49005B2146 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597BC2BFDCF49005B2146 /* APIClientMock.swift */; };
+		A8C597BF2BFDCF60005B2146 /* MediaViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597BE2BFDCF60005B2146 /* MediaViewModelSpy.swift */; };
+		A8C597C12BFDD189005B2146 /* MediaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597C02BFDD189005B2146 /* MediaTableView.swift */; };
+		A8C597C52BFDD8BA005B2146 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8C597C72BFDD8BA005B2146 /* Localizable.strings */; };
+		A8C597C92BFDD8D7005B2146 /* ESAssignmentLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */; };
 		A8D897002BED393B0011BA9A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D896FF2BED393B0011BA9A /* APIClient.swift */; };
 		A8D897022BED39630011BA9A /* OMDbProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D897012BED39630011BA9A /* OMDbProvider.swift */; };
 		A8D897052BED3BA80011BA9A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D897042BED3BA80011BA9A /* Media.swift */; };
@@ -64,6 +69,11 @@
 		A8B090FB2BEE1FF70048A17C /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
 		A8B091052BEE6B680048A17C /* BuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderProtocol.swift; sourceTree = "<group>"; };
 		A8B091072BEE6B8B0048A17C /* MediaViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewControllerBuilder.swift; sourceTree = "<group>"; };
+		A8C597BC2BFDCF49005B2146 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
+		A8C597BE2BFDCF60005B2146 /* MediaViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModelSpy.swift; sourceTree = "<group>"; };
+		A8C597C02BFDD189005B2146 /* MediaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableView.swift; sourceTree = "<group>"; };
+		A8C597C62BFDD8BA005B2146 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESAssignmentLocalizable.swift; sourceTree = "<group>"; };
 		A8D896FF2BED393B0011BA9A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A8D897012BED39630011BA9A /* OMDbProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbProvider.swift; sourceTree = "<group>"; };
 		A8D897042BED3BA80011BA9A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -140,6 +150,7 @@
 				A8D896FE2BED39320011BA9A /* Service */,
 				A8B090EB2BED834C0048A17C /* GenericComponents */,
 				A80E31492BED344D00730EDF /* Feature */,
+				A8C597C22BFDD7EF005B2146 /* Localizable */,
 				A80E31222BED33CE00730EDF /* Assets.xcassets */,
 				A80E31242BED33CE00730EDF /* LaunchScreen.storyboard */,
 				A80E31272BED33CE00730EDF /* Info.plist */,
@@ -151,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				A80E31302BED33CF00730EDF /* MediaViewModelTests.swift */,
+				A8C597BC2BFDCF49005B2146 /* APIClientMock.swift */,
+				A8C597BE2BFDCF60005B2146 /* MediaViewModelSpy.swift */,
 			);
 			path = ESAssignmentTests;
 			sourceTree = "<group>";
@@ -171,6 +184,7 @@
 				A80E311D2BED33C900730EDF /* MediaViewController.swift */,
 				A8D8970B2BED4ABA0011BA9A /* MediaView.swift */,
 				A8D8970D2BED57950011BA9A /* MediaTableCell.swift */,
+				A8C597C02BFDD189005B2146 /* MediaTableView.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -207,6 +221,15 @@
 				A8B091072BEE6B8B0048A17C /* MediaViewControllerBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		A8C597C22BFDD7EF005B2146 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				A8C597C72BFDD8BA005B2146 /* Localizable.strings */,
+				A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		A8D896FE2BED39320011BA9A /* Service */ = {
@@ -315,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80E31262BED33CE00730EDF /* LaunchScreen.storyboard in Resources */,
+				A8C597C52BFDD8BA005B2146 /* Localizable.strings in Resources */,
 				A80E31232BED33CE00730EDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,8 +429,10 @@
 				A8DB46612BEE818F0098CD19 /* OMDbProviderMock.swift in Sources */,
 				A8D8970C2BED4ABA0011BA9A /* MediaView.swift in Sources */,
 				A8B090F02BED8B080048A17C /* URLChecker.swift in Sources */,
+				A8C597C12BFDD189005B2146 /* MediaTableView.swift in Sources */,
 				A8D8970E2BED57950011BA9A /* MediaTableCell.swift in Sources */,
 				A8D897052BED3BA80011BA9A /* Media.swift in Sources */,
+				A8C597C92BFDD8D7005B2146 /* ESAssignmentLocalizable.swift in Sources */,
 				A8B090FC2BEE1FF70048A17C /* ErrorCell.swift in Sources */,
 				A8B090ED2BED835B0048A17C /* LoadingCell.swift in Sources */,
 				A8D897022BED39630011BA9A /* OMDbProvider.swift in Sources */,
@@ -422,6 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80E31312BED33CF00730EDF /* MediaViewModelTests.swift in Sources */,
+				A8C597BD2BFDCF49005B2146 /* APIClientMock.swift in Sources */,
+				A8C597BF2BFDCF60005B2146 /* MediaViewModelSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +470,14 @@
 				A80E31252BED33CE00730EDF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8C597C72BFDD8BA005B2146 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8C597C62BFDD8BA005B2146 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

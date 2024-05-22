@@ -2,6 +2,11 @@ import UIKit
 
 final class LoadingCell: UITableViewCell {
 
+    struct Constants {
+        static let loadIconHeightWidth: CGFloat = 40.0
+        static let defaultPadding: CGFloat = 8.0
+    }
+
     private lazy var progressView: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(frame: .zero)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -36,12 +41,15 @@ extension LoadingCell: ViewCode {
     }
 
     func buildConstraints() {
+        let defaultPadding = Constants.defaultPadding
+        let loadIconHeightWidth = Constants.loadIconHeightWidth
+
         progressView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        let constraint = progressView.heightAnchor.constraint(equalToConstant: 40.0)
+        let constraint = progressView.heightAnchor.constraint(equalToConstant: loadIconHeightWidth)
         constraint.priority = .defaultHigh
         constraint.isActive = true
-        progressView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-        progressView.topAnchor.constraint(equalTo: topAnchor, constant: 8.0).isActive = true
-        progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8.0).isActive = true
+        progressView.widthAnchor.constraint(equalToConstant: loadIconHeightWidth).isActive = true
+        progressView.topAnchor.constraint(equalTo: topAnchor, constant: defaultPadding).isActive = true
+        progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -defaultPadding).isActive = true
     }
 }
