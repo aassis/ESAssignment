@@ -1,0 +1,6 @@
+framework module Pods_ESAssignment_ESAssignmentUITests {
+  umbrella header "Pods-ESAssignment-ESAssignmentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
