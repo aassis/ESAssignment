@@ -22,8 +22,9 @@ final class MediaTableCell: UITableViewCell {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Button", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .highlighted)
+        button.backgroundColor = .lightGray
         button.clipsToBounds = true
         button.layer.cornerRadius = 10.0
         return button
@@ -68,31 +69,31 @@ extension MediaTableCell: ViewCode {
     }
 
     func buildHierarchy() {
-        addSubview(posterImage)
-        addSubview(titleLabel)
-        addSubview(yearLabel)
-        addSubview(button)
+        contentView.addSubview(posterImage)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(yearLabel)
+        contentView.addSubview(button)
     }
 
     func buildConstraints() {
-        posterImage.topAnchor.constraint(equalTo: topAnchor, constant: 8.0).isActive = true
-        posterImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 8.0).isActive = true
-        posterImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8.0).isActive = true
+        posterImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0).isActive = true
+        posterImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8.0).isActive = true
+        posterImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0).isActive = true
         let constraint = posterImage.heightAnchor.constraint(equalToConstant: 200.0)
         constraint.priority = .defaultHigh
         constraint.isActive = true
-        posterImage.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75).isActive = true
+        posterImage.widthAnchor.constraint(equalTo: posterImage.heightAnchor, multiplier: 0.75).isActive = true
 
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0).isActive = true
         titleLabel.leftAnchor.constraint(equalTo: posterImage.rightAnchor, constant: 8.0).isActive = true
-        titleLabel.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -8.0).isActive = true
+        titleLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -8.0).isActive = true
 
         yearLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
         yearLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
 
-        button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8.0).isActive = true
+        button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0).isActive = true
         button.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: rightAnchor, constant: -8.0).isActive = true
+        button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8.0).isActive = true
     }
 
     func additionalConfiguration() {

@@ -19,11 +19,12 @@ final class MediaView: UIView {
     }()
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
+        let tableView = MediaTableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .onDrag
+        tableView.canCancelContentTouches = true
         return tableView
     }()
 
