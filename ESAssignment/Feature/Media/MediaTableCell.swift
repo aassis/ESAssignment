@@ -3,6 +3,12 @@ import AlamofireImage
 
 final class MediaTableCell: UITableViewCell {
 
+    struct Constants {
+        static let defaultPadding: CGFloat = 8.0
+        static let posterHeight: CGFloat = 200.0
+        static let posterWidthRatioMultiplier: CGFloat = 0.75
+    }
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -76,24 +82,28 @@ extension MediaTableCell: ViewCode {
     }
 
     func buildConstraints() {
-        posterImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0).isActive = true
-        posterImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8.0).isActive = true
-        posterImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0).isActive = true
-        let constraint = posterImage.heightAnchor.constraint(equalToConstant: 200.0)
+        let defaultPadding = Constants.defaultPadding
+        let posterHeight = Constants.posterHeight
+        let ratioMultiplier = Constants.posterWidthRatioMultiplier
+
+        posterImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: defaultPadding).isActive = true
+        posterImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: defaultPadding).isActive = true
+        posterImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -defaultPadding).isActive = true
+        let constraint = posterImage.heightAnchor.constraint(equalToConstant: posterHeight)
         constraint.priority = .defaultHigh
         constraint.isActive = true
-        posterImage.widthAnchor.constraint(equalTo: posterImage.heightAnchor, multiplier: 0.75).isActive = true
+        posterImage.widthAnchor.constraint(equalTo: posterImage.heightAnchor, multiplier: ratioMultiplier).isActive = true
 
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: posterImage.rightAnchor, constant: 8.0).isActive = true
-        titleLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -8.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: defaultPadding).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: posterImage.rightAnchor, constant: defaultPadding).isActive = true
+        titleLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -defaultPadding).isActive = true
 
-        yearLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
+        yearLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: defaultPadding).isActive = true
         yearLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
 
-        button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.0).isActive = true
+        button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -defaultPadding).isActive = true
         button.leftAnchor.constraint(equalTo: titleLabel.leftAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8.0).isActive = true
+        button.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -defaultPadding).isActive = true
     }
 
     func additionalConfiguration() {
