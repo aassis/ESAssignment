@@ -3,6 +3,10 @@ import AlamofireImage
 
 final class MediaTableCell: UITableViewCell {
 
+    private lazy var buttonTitle: String = {
+        ESAssignmentLocalized.MediaTableCell.MediaButton.buttonTitle
+    }()
+
     struct Constants {
         static let defaultPadding: CGFloat = 8.0
         static let posterHeight: CGFloat = 200.0
@@ -27,7 +31,7 @@ final class MediaTableCell: UITableViewCell {
     private lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Button", for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.white, for: .highlighted)
         button.backgroundColor = .lightGray

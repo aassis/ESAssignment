@@ -24,6 +24,8 @@
 		A8C597BD2BFDCF49005B2146 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597BC2BFDCF49005B2146 /* APIClientMock.swift */; };
 		A8C597BF2BFDCF60005B2146 /* MediaViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597BE2BFDCF60005B2146 /* MediaViewModelSpy.swift */; };
 		A8C597C12BFDD189005B2146 /* MediaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597C02BFDD189005B2146 /* MediaTableView.swift */; };
+		A8C597C52BFDD8BA005B2146 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8C597C72BFDD8BA005B2146 /* Localizable.strings */; };
+		A8C597C92BFDD8D7005B2146 /* ESAssignmentLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */; };
 		A8D897002BED393B0011BA9A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D896FF2BED393B0011BA9A /* APIClient.swift */; };
 		A8D897022BED39630011BA9A /* OMDbProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D897012BED39630011BA9A /* OMDbProvider.swift */; };
 		A8D897052BED3BA80011BA9A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D897042BED3BA80011BA9A /* Media.swift */; };
@@ -70,6 +72,8 @@
 		A8C597BC2BFDCF49005B2146 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		A8C597BE2BFDCF60005B2146 /* MediaViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModelSpy.swift; sourceTree = "<group>"; };
 		A8C597C02BFDD189005B2146 /* MediaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableView.swift; sourceTree = "<group>"; };
+		A8C597C62BFDD8BA005B2146 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESAssignmentLocalizable.swift; sourceTree = "<group>"; };
 		A8D896FF2BED393B0011BA9A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A8D897012BED39630011BA9A /* OMDbProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDbProvider.swift; sourceTree = "<group>"; };
 		A8D897042BED3BA80011BA9A /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				A8D896FE2BED39320011BA9A /* Service */,
 				A8B090EB2BED834C0048A17C /* GenericComponents */,
 				A80E31492BED344D00730EDF /* Feature */,
+				A8C597C22BFDD7EF005B2146 /* Localizable */,
 				A80E31222BED33CE00730EDF /* Assets.xcassets */,
 				A80E31242BED33CE00730EDF /* LaunchScreen.storyboard */,
 				A80E31272BED33CE00730EDF /* Info.plist */,
@@ -216,6 +221,15 @@
 				A8B091072BEE6B8B0048A17C /* MediaViewControllerBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		A8C597C22BFDD7EF005B2146 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				A8C597C72BFDD8BA005B2146 /* Localizable.strings */,
+				A8C597C82BFDD8D7005B2146 /* ESAssignmentLocalizable.swift */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		A8D896FE2BED39320011BA9A /* Service */ = {
@@ -324,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80E31262BED33CE00730EDF /* LaunchScreen.storyboard in Resources */,
+				A8C597C52BFDD8BA005B2146 /* Localizable.strings in Resources */,
 				A80E31232BED33CE00730EDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +432,7 @@
 				A8C597C12BFDD189005B2146 /* MediaTableView.swift in Sources */,
 				A8D8970E2BED57950011BA9A /* MediaTableCell.swift in Sources */,
 				A8D897052BED3BA80011BA9A /* Media.swift in Sources */,
+				A8C597C92BFDD8D7005B2146 /* ESAssignmentLocalizable.swift in Sources */,
 				A8B090FC2BEE1FF70048A17C /* ErrorCell.swift in Sources */,
 				A8B090ED2BED835B0048A17C /* LoadingCell.swift in Sources */,
 				A8D897022BED39630011BA9A /* OMDbProvider.swift in Sources */,
@@ -454,6 +470,14 @@
 				A80E31252BED33CE00730EDF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8C597C72BFDD8BA005B2146 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8C597C62BFDD8BA005B2146 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
