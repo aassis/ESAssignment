@@ -3,6 +3,7 @@ import UIKit
 import Combine
 
 protocol MediaViewModelProtocol {
+    var apiClient: APIClientProtocol { get }
     var media: [Media]? { get }
     var mediaPublisher: Published<[Media]?>.Publisher { get }
     var error: Error? { get }
@@ -21,7 +22,7 @@ protocol MediaViewModelProtocol {
 
 final class MediaViewModel: MediaViewModelProtocol, ObservableObject {
 
-    private let apiClient: APIClientProtocol
+    private(set) var apiClient: APIClientProtocol
 
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
