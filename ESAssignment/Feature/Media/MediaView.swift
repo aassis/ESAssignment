@@ -2,6 +2,10 @@ import UIKit
 
 final class MediaView: UIView {
 
+    private lazy var apiKeyFieldHint: String = {
+        ESAssignmentLocalized.MediaView.MediaTextField.apiKeyHint
+    }()
+
     struct Constants {
         static let halfPadding: CGFloat = 4.0
         static let defaultPadding: CGFloat = 8.0
@@ -22,7 +26,7 @@ final class MediaView: UIView {
         field.clearButtonMode = .whileEditing
         field.returnKeyType = .next
         field.borderStyle = .roundedRect
-        field.placeholder = "Insert your API Key!"
+        field.placeholder = apiKeyFieldHint
         return field
     }()
 
