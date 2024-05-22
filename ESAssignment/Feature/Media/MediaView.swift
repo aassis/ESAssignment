@@ -1,6 +1,14 @@
 import UIKit
 
 final class MediaView: UIView {
+
+    struct Constants {
+        static let halfPadding: CGFloat = 4.0
+        static let defaultPadding: CGFloat = 8.0
+        static let textFieldHeight: CGFloat = 44.0
+        static let searchBarHeight: CGFloat = 44.0
+    }
+
     lazy var searchField: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -52,15 +60,20 @@ extension MediaView: ViewCode {
     }
 
     func buildConstraints() {
-        apiKeyField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        apiKeyField.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 8.0).isActive = true
-        apiKeyField.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8.0).isActive = true
-        apiKeyField.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        let halfPadding = Constants.defaultPadding
+        let defaultPadding = Constants.defaultPadding
+        let searchBarHeight = Constants.searchBarHeight
+        let textFieldHeight = Constants.textFieldHeight
 
-        searchField.topAnchor.constraint(equalTo: apiKeyField.bottomAnchor, constant: 4.0).isActive = true
+        apiKeyField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        apiKeyField.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: defaultPadding).isActive = true
+        apiKeyField.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -defaultPadding).isActive = true
+        apiKeyField.heightAnchor.constraint(equalToConstant: textFieldHeight).isActive = true
+
+        searchField.topAnchor.constraint(equalTo: apiKeyField.bottomAnchor, constant: halfPadding).isActive = true
         searchField.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
         searchField.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor).isActive = true
-        searchField.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        searchField.heightAnchor.constraint(equalToConstant: searchBarHeight).isActive = true
 
         tableView.topAnchor.constraint(equalTo: searchField.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor).isActive = true
